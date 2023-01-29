@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Tahoma;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+
+    /* Medium */
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+
+    /* Large */
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.intro,
+.loose {
+    background-color: rgb(58 94 10 / 85%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.intro .start {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: rgb(190, 30, 30);
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+}
+
+.loose {
+    display: none;
+}
+
+.loose .holder {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loose h1 {
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 575px) {
+    .loose h1 {
+        font-size: 20px;
+    }
+}
+
+.loose .again {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: rgb(190, 30, 30);
+    color: #fff;
+    cursor: pointer;
+    font-size: 35px;
+    margin: auto;
+    display: block;
+}
+
+@media (max-width: 575px) {
+    .loose .again {
+        padding: 10px 8px;
+        font-size: 22px;
+    }
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: rgb(108, 170, 66);
+    border: 5px solid rgb(45, 105, 4);
+    border-radius: 40px;
+    color: #fff;
+}
+
+@media(max-width: 575px) {
+    .player-info {
+        padding: 10px;
+        margin: 10px auto;
+    }
+}
+
+.player-info .name {
+    margin-left: 30px;
+    ;
+}
+
+@media(max-width: 575px) {
+    .player-info .name {
+        margin-left: 0;
+    }
+
+}
+
+.player-info .tries {
+    margin-right: 30px;
+}
+
+@media(max-width: 575px) {
+    .player-info .tries {
+        margin-right: 0;
+    }
+}
+
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+}
+
+@media (max-width: 767px) {
+    .memory-game {
+        grid-template-columns: repeat(4, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 575px) {
+    .memory-game {
+        grid-template-columns: repeat(4, minmax(80px, 1fr));
+    }
+}
+
+.memory-game .tile {
+    width: 110px;
+    height: 110px;
+    margin: 20px auto;
+    border: 2px solid rgb(45, 105, 4);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+
+}
+
+@media (max-width: 767px) {
+    .memory-game .tile {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 575px) {
+    .memory-game .tile {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+.memory-game .tile.flipped,
+.memory-game .tile.success {
+    transform: rotateY(180deg);
+}
+
+.memory-game .tile .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.memory-game .tile .front {
+    color: #fff;
+    font-size: 108px;
+    text-align: center;
+    background-color: rgb(4, 34, 16);
+}
+
+@media (max-width: 767px) {
+    .memory-game .tile .front {
+        font-size: 75px;
+    }
+}
+
+@media (max-width:575px) {
+    .memory-game .tile .front {
+        font-size: 60px;
+    }
+}
+
+.memory-game .tile .back {
+    transform: rotateY(180deg);
+    transition: 3s;
+}
+
+.memory-game .tile .back img {
+    width: 100%;
+
+}
+
+/* Start Footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+    background-color: rgb(45, 105, 4);
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 0px 8px 8px 0;
+    color: #eee;
+}
+
+@media (max-width: 767px) {
+    .footer {
+        width: 100%;
+        text-align: center;
+        border-radius: 0;
+    }
+}
+
+.footer span {
+    font-size: 12px;
+}
+
+.footer span a {
+    text-decoration: none;
+    color: rgb(4, 34, 16);
+}
+
+/* End Footer */
